@@ -136,8 +136,6 @@ namespace PDFMerge
 
                     reader = new PdfReader(file.FullName);
 
-                    //PdfContentByte watermark;
-
                     //Add pages in new file  
                     for (int i = 1; i <= reader.NumberOfPages; i++)
                     {
@@ -157,19 +155,22 @@ namespace PDFMerge
                 try
                 {
 
-                    string watermarkText = "ITEXT Copyright APGL License";
-                    float fontSize = 50;
-                    float xPosition = 300;
-                    float yPosition = 400;
+                    string watermarkText = "Created by PDFMerge.exe using ITEXT Copyright APGL License";
+                    float fontSize = 20;
                     float angle = 45;
 
                     BaseFont baseFont = BaseFont.CreateFont(BaseFont.HELVETICA, BaseFont.WINANSI, BaseFont.EMBEDDED);
 
                     Document document = new Document();
+                    Rectangle rect =   document.PageSize.GetRectangle(0,1000);
+                    float xPosition = rect.Width/2;
+                    float yPosition = 300;
+
                     PdfReader pdfReader = new PdfReader(outputPdfPath);
+
                     PdfStamper stamp = new PdfStamper(pdfReader, new FileStream(outputPdfPath.ToUpper().Replace(".PDF", "[temp][file].pdf"), FileMode.Create));
 
-                    var gstate = new PdfGState { FillOpacity = 0.1f, StrokeOpacity = 0.3f };
+                    var gstate = new PdfGState { FillOpacity = 0.3f, StrokeOpacity = 0.3f };
 
                     PdfContentByte waterMark;
                     for (int page = 1; page <= pdfReader.NumberOfPages; page++)
