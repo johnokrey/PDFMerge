@@ -52,12 +52,22 @@ namespace PDFMerge
             try
             {
                 Console.WriteLine(
-                $@"PDFMerge ver 1.2 
+                 @" PDFMerge will take a wild card paramter for PDF file sto merge and 
+                 a second paramter that will be the merged PDF file as the output
                  PDFMerge.exe Copyright(C) < 2022 >  <John Reynolds> 
-                 This program comes with ABSOLUTELY NO WARRANTY; for details type `W'
-                 This is free software, and you are welcome to redistribute it
-                 under certain conditions; type 'C' for details.)
-                 or press any key to continue");
+
+                 This program is free software: you can redistribute it and / or modify
+                 it under the terms of the GNU Affero General Public License as published
+                 by the Free Software Foundation, either version 3 of the License, or
+                 (at your option) any later version.
+
+                 This program is distributed in the hope that it will be useful,
+                 but WITHOUT ANY WARRANTY; without even the implied warranty of
+                 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.See the
+                 GNU Affero General Public License for more details.
+
+                 You should have received a copy of the GNU Affero General Public License
+                 along with this program.If not, see < https://www.gnu.org/licenses/>.");
 
 
                 if (args.Length < 2)
@@ -67,10 +77,10 @@ namespace PDFMerge
                     switch (key.KeyChar.ToString().ToUpper())
                     {
                         case "W":
-                            System.Diagnostics.Process.Start("https://www.gnu.org/licenses/gpl-3.0.en.html");
+                            System.Diagnostics.Process.Start("https://www.gnu.org/licenses/agpl-3.0.html");
                             break;
                         case "C":
-                            System.Diagnostics.Process.Start("https://www.gnu.org/licenses/gpl-3.0.en.html");
+                            System.Diagnostics.Process.Start("https://www.gnu.org/licenses/agpl-3.0.html");
                             break;
                     }
 
