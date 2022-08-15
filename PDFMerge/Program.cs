@@ -91,8 +91,12 @@ namespace PDFMerge
                     return;
                 }
 //#if DEBUG
-                //bool waiting = true;
-                //while (waiting)
+                bool waiting = true;
+                while (waiting)
+                {
+                    ConsoleKeyInfo key1 = Console.ReadKey();
+                    waiting = false;
+                }
 //#endif
                 {
                     Thread.Sleep(2000);
